@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AirBnB_clone Project
 
 ## Description
@@ -15,3 +16,6 @@ The command interpreter is used to manage the whole application's functionalitie
 To start the command interpreter, navigate to the project folder and run:
 ```bash
 ./console.py
+=======
+AirBnB clone - The console
+>>>>>>> 2d80b29c82e327a06fa0843203f3208efa0431cc
