@@ -1,13 +1,6 @@
-<<<<<<< HEAD
 ### AUTHORS File
 The `AUTHORS` file should list all individuals who have contributed to the repository. The format is usually a list with names and optionally email addresses, one contributor per line:
 
 ```plaintext
-Benjamin Owolabi owolabenjade@example.com
-Joshua Umukoro email@anotherexample.com
-=======
-# Authors of this repository
-
-Joshua Umukoro <eujosh.w@gmail.com>
-Benjamin Owolabi 
->>>>>>> 2d80b29c82e327a06fa0843203f3208efa0431cc
+Benjamin Owolabi owolabenjade@gmail.com
+Joshua Umukoro eujosh.w@gmail.com
