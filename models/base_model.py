@@ -1,23 +1,24 @@
 #!/usr/bin/python3
 """
-This module contains the BaseModel class, which is the base class for all
-models in the AirBnB_clone project. It manages all common attributes and methods.
+This module defines the BaseModel class which is the base class
+for all other classes in our AirBnB_clone project.
 """
 
-from uuid import uuid4
+import uuid
 from datetime import datetime
 
 class BaseModel:
     """
-    Defines all common attributes/methods for other classes.
+    BaseModel defines all common attributes/methods for other classes.
     """
-
+    
     def __init__(self, *args, **kwargs):
         """
-        Initializes a new instance of BaseModel.
-        If kwargs is not empty, each key of this dictionary is an attribute name
-        (Note: __class__ from kwargs is not added as an attribute).
-        Otherwise, id and created_at/updated_at are set accordingly.
+        Initializes a new BaseModel instance.
+
+        Args:
+            *args (any): Unused.
+            **kwargs (dict): Key/value pairs of attributes.
         """
         if kwargs:
             for key, value in kwargs.items():
@@ -27,7 +28,7 @@ class BaseModel:
                     value = datetime.fromisoformat(value)
                 setattr(self, key, value)
         else:
-            self.id = str(uuid4())
+            self.id = str(uuid.uuid4())
             self.created_at = self.updated_at = datetime.now()
 
     def __str__(self):
@@ -38,15 +39,13 @@ class BaseModel:
 
     def save(self):
         """
-        Updates the updated_at attribute with the current datetime.
+        Updates the public instance attribute updated_at with the current datetime.
         """
         self.updated_at = datetime.now()
 
     def to_dict(self):
         """
-        Returns a dictionary containing all keys/values of the instance.
-        The dictionary also contains the class name under the key '__class__'.
-        The created_at and updated_at are converted to strings in ISO format.
+        Returns a dictionary containing all keys/values of __dict__ of the instance.
         """
         dictionary = self.__dict__.copy()
         dictionary['__class__'] = self.__class__.__name__
