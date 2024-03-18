@@ -1,0 +1,13 @@
+footer {
+    color: white;
+    background-color: #FF0000; /* Assuming you want to keep the red color from the previous tasks */
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid #CCCCCC;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
