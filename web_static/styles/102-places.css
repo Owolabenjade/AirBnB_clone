@@ -1,0 +1,81 @@
+.places {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* This will evenly distribute space around the articles */
+}
+
+.places article {
+    margin: 20px;
+    box-sizing: border-box;
+    border: 1px solid #FF5A5F;
+    border-radius: 4px;
+    flex: 0 1 calc(33.333% - 40px); /* Three items per row */
+}
+
+.places h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Styles for price, guests, rooms, etc. */
+.price_by_night,
+.max_guest,
+.number_rooms,
+.number_bathrooms {
+    text-align: center;
+}
+
+.price_by_night {
+    color: #FF5A5F;
+    border: 4px solid #FF5A5F;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.information {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    padding: 10px 0;
+}
+
+.user,
+.description {
+    padding: 10px;
+    text-align: center;
+}
+
+.user strong {
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .places article {
+        flex: 0 1 calc(50% - 40px); /* Two items per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .places {
+        justify-content: center; /* Center articles when they stack on small screens */
+    }
+
+    .places article {
+        flex: 0 1 90%; /* Full width minus margin on very small screens */
+    }
+
+    .information {
+        flex-direction: column; /* Stack information vertically on small screens */
+        align-items: center;
+    }
+}
+
