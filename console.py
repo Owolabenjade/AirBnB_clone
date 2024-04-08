@@ -27,7 +27,7 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, arg):
         """Creates a new instance of BaseModel, saves it, and prints the id."""
         if not arg:
-            print("** class name missing **")
+            print("** class doesn't exist **")
             return
         try:
             new_instance = self.__class_names[arg]()
@@ -40,7 +40,7 @@ class HBNBCommand(cmd.Cmd):
         """Prints the string representation of an instance based on class name and id."""
         args = arg.split()
         if len(args) == 0:
-            print("** class name missing **")
+            print("** class doesn't exist **")
             return
         if args[0] not in self.__class_names:
             print("** class doesn't exist **")
@@ -59,7 +59,7 @@ class HBNBCommand(cmd.Cmd):
         """Deletes an instance based on the class name and id."""
         args = arg.split()
         if len(args) == 0:
-            print("** class name missing **")
+            print("** class doesn't exist **")
             return
         if args[0] not in self.__class_names:
             print("** class doesn't exist **")
@@ -90,7 +90,7 @@ class HBNBCommand(cmd.Cmd):
         """Updates an instance based on the class name and id by adding or updating attribute."""
         args = arg.split(" ")
         if len(args) < 1:
-            print("** class name missing **")
+            print("** class doesn't exist **")
             return
         if args[0] not in self.__class_names:
             print("** class doesn't exist **")
