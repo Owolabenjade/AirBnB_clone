@@ -1,23 +1,25 @@
 #!/usr/bin/python3
+"""
+A module for AirBnB clone command interpreter.
+"""
 import cmd
-import sys
 
 class HBNBCommand(cmd.Cmd):
+    """
+    Command interpreter class for the AirBnB clone project.
+    """
     prompt = '(hbnb) '
 
     def do_quit(self, arg):
-        'Quit command to exit the program'
+        """Quit command to exit the program."""
         return True
 
     def do_EOF(self, arg):
-        'EOF command to exit the program'
+        """EOF command to exit the program."""
         return True
 
-    def do_help(self, arg):
-        'Help command. Lists available commands.'
-        super().do_help(arg)
-
     def emptyline(self):
+        """An empty line + ENTER shouldn’t execute anything."""
         pass
 
 if __name__ == '__main__':
