@@ -5,7 +5,6 @@ the AirBnB clone project.
 """
 import uuid
 from datetime import datetime
-from models import storage
 
 class BaseModel:
     """
@@ -25,6 +24,7 @@ class BaseModel:
         else:
             self.id = str(uuid.uuid4())
             self.created_at = self.updated_at = datetime.now()
+            from models import storage
             storage.new(self)
 
     def save(self):
@@ -33,13 +33,12 @@ class BaseModel:
         and saves the instance to the file storage.
         """
         self.updated_at = datetime.now()
+        from models import storage
         storage.save()
 
     def to_dict(self):
         """
-        Returns a dictionary containing all keys/values of the instance's
-        __dict__, plus the __class__ key with the object's class name.
-        Converts datetime objects to ISO format strings.
+        Returns a dictionary containing all keys/values of the instance.
         """
         dict_copy = self.__dict__.copy()
         dict_copy['__class__'] = self.__class__.__name__
