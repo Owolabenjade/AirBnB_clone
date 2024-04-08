@@ -1,32 +1,35 @@
 #!/usr/bin/python3
 """
-Defines the FileStorage class that serializes instances to a JSON
-file and deserializes JSON file to instances.
+FileStorage class serializes instances to a JSON file and
+deserializes JSON file to instances.
 """
 import json
 from models.base_model import BaseModel
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 class FileStorage:
-    """Serializes instances to a JSON file & deserializes back to instances."""
-    __file_path = "file.json"
+    """A class that manages file storage for HBNB models."""
+    __file_path = 'file.json'
     __objects = {}
 
     def all(self):
         """Returns the dictionary __objects."""
-        return FileStorage.__objects
+        return self.__objects
 
     def new(self, obj):
         """Sets in __objects the obj with key <obj class name>.id."""
         if obj:
-            obj_id = f"{obj.__class__.__name__}.{obj.id}"
-            self.__objects[obj_id] = obj
+            key = f'{obj.__class__.__name__}.{obj.id}'
+            self.__objects[key] = obj
 
     def save(self):
         """Serializes __objects to the JSON file (path: __file_path)."""
-        obj_dict = {}
-        for key in self.__objects:
-            obj_dict[key] = self.__objects[key].to_dict()
+        obj_dict = {obj: self.__objects[obj].to_dict() for obj in self.__objects.keys()}
         with open(self.__file_path, 'w') as f:
             json.dump(obj_dict, f)
 
@@ -34,11 +37,10 @@ class FileStorage:
         """Deserializes the JSON file to __objects."""
         try:
             with open(self.__file_path, 'r') as f:
-                obj_dict = json.load(f)
-            for obj_id, obj_attrs in obj_dict.items():
-                cls_name = obj_attrs["__class__"]
-                if cls_name in globals():
-                    self.__objects[obj_id] = globals()[cls_name](**obj_attrs)
+                objs = json.load(f)
+            for obj_id in objs:
+                obj_data = objs[obj_id]
+                self.__objects[obj_id] = globals()[obj_data['__class__']](**obj_data)
         except FileNotFoundError:
             pass
 
