@@ -1,0 +1,22 @@
+.places article {
+    border-color: #ff5a5f; /* Maintaining brand colors with good contrast */
+}
+
+.places h2 {
+    color: #303030; /* Ensuring readability */
+}
+
+.price_by_night {
+    color: #ff5a5f;
+    background-color: #fff;
+    border-color: #ff5a5f;
+}
+
+.information div,
+.user,
+.description {
+    color: #303030; /* Dark text for better readability */
+}
+
+/* ... additional styles for other elements within .places ... */
+

@@ -1,0 +1,48 @@
+/* ... existing styles ... */
+
+/* Amenities styles */
+.amenities h2,
+.reviews h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+    margin-bottom: 10px;
+}
+
+.amenities ul,
+.reviews ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.amenities li,
+.reviews li {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* You may want to add specific classes or ids for icons next to amenities */
+.amenities li::before {
+    content: "🐾"; /* Replace with actual icons or classes */
+    margin-right: 5px;
+}
+
+/* Reviews styles */
+.reviews h3 {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.reviews p {
+    font-size: 12px;
+}
+
+/* Each review block */
+.reviews li:not(:last-child) {
+    border-bottom: 1px solid #DDDDDD;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* ... any additional styles ... */
+

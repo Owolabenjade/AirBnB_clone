@@ -1,0 +1,19 @@
+.filters {
+    background-color: #fff;
+    color: #303030;
+}
+
+.filters button {
+    background-color: #ff5a5f; /* Bright color for primary action */
+    color: #fff;
+    border: none;
+}
+
+.filters button:hover,
+.filters button:focus {
+    background-color: #cc4749;
+    outline: 3px solid #cc4749; /* Custom focus state */
+}
+
+/* ... other filter styles ... */
+

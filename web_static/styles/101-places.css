@@ -1,0 +1,31 @@
+.places {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* Adjust padding/margin if needed */
+}
+
+.places article {
+    /* Existing styles, and add flexbox properties if needed */
+    margin: 20px;
+    box-sizing: border-box;
+    flex: 0 1 calc(33.333% - 40px); /* Three items per row with 20px margin on each side */
+}
+
+/* Update media queries for responsive behavior if needed */
+@media (max-width: 768px) {
+    .places article {
+        /* Adjust the width for smaller screens, maybe 50% or 100% */
+        flex: 0 1 calc(50% - 40px); /* Two items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .places article {
+        /* Single column layout on very small screens */
+        flex: 0 1 100%;
+    }
+}
+
+/* ... rest of the styles ... */
+

@@ -1,0 +1,36 @@
+.locations .popover,
+.amenities .popover {
+    display: none;
+    position: absolute;
+    background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    width: 100%;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.locations:hover .popover,
+.amenities:hover .popover {
+    display: block;
+}
+
+.locations .popover h2,
+.amenities .popover h2 {
+    font-size: 16px;
+}
+
+/* Style for individual list items */
+.locations ul li,
+.amenities ul li {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.locations ul li ul,
+.amenities ul li ul {
+    padding-left: 20px;
+}
+
+/* ... existing styles ... */
+
